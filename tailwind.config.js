@@ -24,7 +24,27 @@ module.exports = {
       raleway: ["Raleway"],
       lato: ["Lato"],
     },
-    extend: {},
+    extend: {
+      animation: {
+        fadeRightMini: "fadeRightMini 1s ease-in-out",
+        fadeLeftMini: "fadeRightMini 1s ease-in-out",
+        grow: "grow 700ms ease-in",
+      },
+      keyframes: {
+        fadeLeftMini: {
+          "0%": { opacity: 0, transform: "translate3d(-40%, 0, 0)" },
+          "100%": { opacity: 1, transform: "translateZ(0)" },
+        },
+        fadeRightMini: {
+          "0%": { opacity: 0, transform: "translate3d(40%, 0, 0)" },
+          "100%": { opacity: 1, transform: "translateZ(0)" },
+        },
+        grow: {
+          "0%": { transform: "scale(0)" },
+          "100%": { transform: "scale(1)" },
+        },
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

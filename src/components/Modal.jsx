@@ -1,4 +1,6 @@
-import React, { Children } from "react";
+import React, { useState } from "react";
+
+import "../App.css";
 
 const Modal = ({
   title,
@@ -6,11 +8,17 @@ const Modal = ({
   setShowModal,
   children = <p>Nothing To Display</p>,
 }) => {
+  const [initialDisplayValue, setInitialDisplayValue] = useState("hidden");
+
+  // const shrinkAnimation = () => {
+  //   if (showModal) displayProperty = "animate-shrink";
+  // };
+
   return (
     <>
       <div
         className={`justify-center items-center flex overflow-x-hidden ${
-          showModal ? "growAnimate" : "hidden"
+          showModal ? "animate-grow" : "hidden"
         } overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none`}
       >
         <div className="relative md:w-full w-1/2 my-6 mx-auto max-w-3xl">

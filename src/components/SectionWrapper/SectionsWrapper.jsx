@@ -39,7 +39,7 @@ const SectionsWrapper = ({
             <img
               src={image}
               className={`absolute left-1/4 md:left-0 object-cover md:relative ${
-                inView && "fadeLeftMini"
+                inView && "animate-fadeLeftMini"
               }`}
             />
           </div>
@@ -53,20 +53,20 @@ const SectionsWrapper = ({
           <div className="flex flex-col justify-center items-start mt-20 w-1/2 md:w-full md:items-center">
             <h3
               className={`font-raleway text-gray text-normal ${
-                inView && "fadeRightMini"
+                inView && "animate-fadeRightMini"
               }`}
             >
               {subTitle}
             </h3>
             <div
               className={`border-b-2 w-28 border-gray ml-4 ${
-                inView && "fadeLeftMini"
+                inView && "animate-fadeLeftMini"
               }`}
             ></div>
           </div>
           <div
             className={`w-1/2 mt-28 md:mt-4 md:w-full md:items-center ${
-              inView && "fadeRightMini_delay"
+              inView && "animate-fadeRightMini delay-200"
             }`}
           >
             <p className="text-gray text-semibold font-lato md:flex-wrap md:text-center md:px-4">

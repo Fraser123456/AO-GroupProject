@@ -2,27 +2,22 @@ import React from "react";
 import { useFormikContext } from "formik";
 
 import { useInView } from "react-intersection-observer";
+
+//Styles animations
 import styles from "../../styles/Global";
-import "./Form.css";
+import { staggeredSlideUp } from "../../styles/Animations";
+import "../../App.css";
 
 const TextAreadInput = ({ name, label, delay = 100 }) => {
   const [ref, inView] = useInView();
   const { setFieldTouched, handleChange, errors, touched, values } =
     useFormikContext();
 
-  const animation = () => {
-    return {
-      animation: "slideUp 1s",
-      animationFillMode: "both",
-      animationDelay: delay + 500 + "ms",
-    };
-  };
-
   return (
     <div
       ref={ref}
       className="flex flex-col w-full"
-      style={inView ? animation() : {}}
+      style={inView ? staggeredSlideUp(delay) : {}}
     >
       <label htmlFor={name} className={styles.textInputLable}>
         {label}

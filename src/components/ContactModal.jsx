@@ -9,7 +9,7 @@ import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import {
   loadUserContactInfo,
-  getUserInfo,
+  getUserContactInfo,
   sendUserContactMessage,
   shouldShowContactModal,
   showContactModal,
@@ -20,11 +20,10 @@ import * as Yup from "yup";
 
 const ContactModal = () => {
   const dispatch = useDispatch();
-  const userContactInfo = useSelector(getUserInfo());
+  const userContactInfo = useSelector(getUserContactInfo());
   const shouldShowModal = useSelector(showContactModal());
 
   const initialValues = { ...userContactInfo, message: "" };
-  console.log(initialValues);
 
   const contactSchema = Yup.object().shape({
     email: Yup.string()
@@ -59,7 +58,7 @@ const ContactModal = () => {
     >
       <Form
         enableReinitialize={true}
-        initialValues={{ ...userContactInfo, message: "" }}
+        initialValues={initialValues}
         validationSchema={contactSchema}
         handleSubmit={handleSubmit}
       >

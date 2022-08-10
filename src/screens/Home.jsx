@@ -23,6 +23,9 @@ import { loadImages, getSpecifiedNumberOfImages } from "../store/images";
 import { useDispatch, useSelector } from "react-redux";
 import ContactModal from "../components/ContactModal";
 
+//Animation
+import { staggeredGrow } from "../styles/Animations";
+
 const team = [
   {
     id: 1,
@@ -55,13 +58,13 @@ const Home = () => {
   const [getToKnowUsRef, getToKnowUsRefInView] = useInView();
   const [ourWorkRef, ourWorkInView] = useInView();
 
-  const animation = (indx) => {
-    return {
-      animation: " Grow 1s",
-      animationDelay: indx * 100 + "ms",
-      animationFillMode: "backwards",
-    };
-  };
+  // const animation = (indx) => {
+  //   return {
+  //     animation: "Grow 1s",
+  //     animationDelay: indx * 100 + "ms",
+  //     animationFillMode: "backwards",
+  //   };
+  // };
 
   useEffect(() => {
     dispatch(loadImages());
@@ -77,7 +80,7 @@ const Home = () => {
         className="flex w-full justify-center grid-cols-1 h-screen background-image overflow-hidden"
         style={{ backgroundImage: `url(${HomeBackground})` }}
       >
-        <div className="w-1/2 mt-36 growAnimate">
+        <div className="w-1/2 mt-36 animate-grow">
           <h1 className="text-white justify-center top-1/4 text-shadow flex-wrap text-center my-4 sm:text-left sm:leading-tight">
             Bringing <span className="text-primary">You</span> The{" "}
             <span className="text-primary">Best</span>
@@ -119,8 +122,8 @@ const Home = () => {
         <div className="flex flex-row my-20 text-white w-full grid sm:grid-cols-2 grid-cols-3">
           {team.map((item, indx) => (
             <div
-              className={`flex flex-row w-full m-4 `}
-              style={inView ? animation(indx) : {}}
+              className={`flex flex-row w-full m-4`}
+              style={inView ? staggeredGrow(indx) : {}}
               key={item.id}
             >
               <div className="w-full h-auto flex flex-col justify-items-center items-center">
@@ -180,7 +183,7 @@ const Home = () => {
           {/* Leadership */}
           <div
             className={`flex flex-row w-full m-4 `}
-            style={getToKnowUsRefInView ? animation(1) : {}}
+            style={getToKnowUsRefInView ? staggeredGrow(1) : {}}
           >
             <div className="w-full h-auto flex flex-col justify-items-center items-center">
               <div className="flex  justify-center items-center">
@@ -202,7 +205,7 @@ const Home = () => {
           {/* Careers */}
           <div
             className={`flex flex-row w-full m-4 `}
-            style={getToKnowUsRefInView ? animation(3) : {}}
+            style={getToKnowUsRefInView ? staggeredGrow(3) : {}}
           >
             <div className="w-full h-auto flex flex-col justify-items-center items-center">
               <div className="flex  justify-center items-center">
@@ -224,7 +227,7 @@ const Home = () => {
           {/* Partnershis */}
           <div
             className={`flex flex-row w-full m-4 `}
-            style={getToKnowUsRefInView ? animation(5) : {}}
+            style={getToKnowUsRefInView ? staggeredGrow(5) : {}}
           >
             <div className="w-full h-auto flex flex-col justify-items-center items-center">
               <div className="flex  justify-center items-center">
@@ -246,7 +249,7 @@ const Home = () => {
           {/* Press */}
           <div
             className={`flex flex-row w-full m-4 `}
-            style={getToKnowUsRefInView ? animation(7) : {}}
+            style={getToKnowUsRefInView ? staggeredGrow(7) : {}}
           >
             <div className="w-full h-auto flex flex-col justify-items-center items-center">
               <div className="flex  justify-center items-center">
@@ -281,19 +284,13 @@ const Home = () => {
           >
             {images &&
               images.map((image, indx) => (
-                // <div
-                //   key={image.title + "_" + indx}
-                //   className="flex justify-center items-center w-full basis-1/3"
-                //   style={ourWorkInView ? animation(indx) : {}}
-                // >
                 <img
                   key={image.title + "_" + indx}
                   src={image.url}
                   alt={image.title}
                   className=" object-fill scale-100 hover:scale-75 duration-500 ease-in-out hover:animate-bounce"
-                  style={ourWorkInView ? animation(indx) : {}}
+                  style={ourWorkInView ? staggeredGrow(indx) : {}}
                 />
-                //</div>
               ))}
           </div>
         </div>

@@ -57,7 +57,7 @@ export const sendUserContactMessage = (data) => (dispatch, getState) => {
 };
 
 //Memoization
-export const getUserInfo = () =>
+export const getUserContactInfo = () =>
   createSelector(
     (state) => state.entities.contact,
     (contact) => contact.contactInfo
