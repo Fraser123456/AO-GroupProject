@@ -1,4 +1,6 @@
 import React from "react";
+
+//Styles
 import "./SectionHeader.css";
 
 const SectionHeading = ({ title, showDivider = true, color = "black" }) => {

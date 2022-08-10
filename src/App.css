@@ -29,6 +29,7 @@ p{
     border-width: 1;
 }
 
+/*For the staggered animations*/
  @keyframes Grow {
     0%{
         transform: scale(0);
@@ -38,7 +39,7 @@ p{
     }
   }
 
-  
+/*For the staggered animations*/
 @keyframes slideUp {
   0%{
       transform: translateY(200px);

@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormikContext } from "formik";
 
+//Component in view
 import { useInView } from "react-intersection-observer";
 
 //Styles animations

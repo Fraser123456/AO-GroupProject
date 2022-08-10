@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
+//Icons
 import { FaTh, FaEnvelope, FaBars } from "react-icons/fa";
-import styles from "../styles/Global";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { shouldShowContactModal } from "../store/contact";
+
+//Styles
+import styles from "../styles/Global";
 
 const Navbar = () => {
   const dispatch = useDispatch();

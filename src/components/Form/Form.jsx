@@ -1,8 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
 
-import TextInput from "./TextInput";
-import TextAreadInput from "./TextAreadInput";
 import FormButton from "./FormButton";
 
 const Form = ({

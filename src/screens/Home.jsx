@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
-import { SectionHeading, SectionsWrapper } from "../components";
+//Components
+import { SectionHeading, SectionsWrapper, ContactModal } from "../components";
 
 //Images
 import HomeBackground from "../assets/HomeBackground.png";
@@ -12,8 +13,6 @@ import UserImage from "../assets/UserImage.png";
 import { FiUser, FiUsers } from "react-icons/fi";
 import { HiOutlineOfficeBuilding, HiOutlineNewspaper } from "react-icons/hi";
 import { FaHandsHelping } from "react-icons/fa";
-//Styles
-import "../App.css";
 
 //Check component in view library
 import { useInView } from "react-intersection-observer";
@@ -21,9 +20,9 @@ import { useInView } from "react-intersection-observer";
 //Redux
 import { loadImages, getSpecifiedNumberOfImages } from "../store/images";
 import { useDispatch, useSelector } from "react-redux";
-import ContactModal from "../components/ContactModal";
 
-//Animation
+//Styles and Animations
+import "../App.css";
 import { staggeredGrow } from "../styles/Animations";
 
 const team = [

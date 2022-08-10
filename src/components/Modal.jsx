@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
+//Styles
 import "../App.css";
 
 const Modal = ({
@@ -8,12 +9,6 @@ const Modal = ({
   setShowModal,
   children = <p>Nothing To Display</p>,
 }) => {
-  const [initialDisplayValue, setInitialDisplayValue] = useState("hidden");
-
-  // const shrinkAnimation = () => {
-  //   if (showModal) displayProperty = "animate-shrink";
-  // };
-
   return (
     <>
       <div

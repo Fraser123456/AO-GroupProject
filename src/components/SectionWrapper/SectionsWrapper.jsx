@@ -1,6 +1,11 @@
 import React from "react";
+
 import { SectionHeading } from "../../components";
+
+//Component in view
 import { useInView } from "react-intersection-observer";
+
+//Styles
 import "./SectionWrapper.css";
 
 const SectionsWrapper = ({

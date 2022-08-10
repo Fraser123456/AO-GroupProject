@@ -1,7 +1,10 @@
 import React from "react";
 import { useFormikContext } from "formik";
+
+//Component in view
 import { useInView } from "react-intersection-observer";
 
+//Styles and Animations
 import { staggeredSlideUp } from "../../styles/Animations";
 import styles from "../../styles/Global";
 import "../../App.css";

@@ -1,5 +1,6 @@
 import React from "react";
 
+//Icons
 import {
   FaArrowUp,
   FaSnapchat,
@@ -12,6 +13,7 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 
+//Styles
 import styles from "../styles/Global";
 import "../App.css";
 
